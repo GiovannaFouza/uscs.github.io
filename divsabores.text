@@ -1,0 +1,71 @@
+<div class="gallery row">
+                            <div id="zorro" class="row text-center text-lg-left">
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    <a id="link" href="#" class="d-block mb-4 h-100">
+                                        <img id="foto" class="img-fluid img-thumbnail" src="../img/pizzamorango.jpg" alt="">
+
+                                        <p class="morango"><b>Pizza de Morango com Chocolate</b></p>
+                                        <p class="chocolate"><b> Uma delicia de pizza muito saborosa.<br>Gostou desse sabor ligue para o numero (11)4232-1967</b></p>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    <a id="link" href="#" class="d-block mb-4 h-100">
+                                        <img id="foto" class="img-fluid img-thumbnail" src="../img/pizzabanana.jpg" alt="">
+
+                                        <p class="morango"><b>Pizza de banana com Chocolate</b></p>
+                                        <p class="chocolate"><b> Uma delicia de pizza muito saborosa.<br>Gostou desse sabor ligue para o numero (11)4232-1967</b></p>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    <a id="link" href="#" class="d-block mb-4 h-100">
+                                        <img id="foto" class="img-fluid img-thumbnail" src="../img/pizzabranco.jpg" alt="">
+
+                                        <p class="morango"><b>Pizza de Mista Chocolate Branco/Preto</b></p>
+                                        <p class="chocolate"><b> Uma delicia de pizza muito saborosa.<br>Gostou desse sabor ligue para o numero (11)4232-1967</b></p>
+                                    </a>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    <a id="link" href="#" class="d-block mb-4 h-100">
+                                        <img id="foto" class="img-fluid img-thumbnail" src="../img/pizzabrigadeiro.jpg" alt="">
+
+                                        <p class="morango"><b>Pizza de Brigadeiro</b></p>
+                                        <p class="chocolate"><b> Uma delicia de pizza muito saborosa.<br>Gostou desse sabor ligue para o numero (11)4232-1967</b></p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="zorro" class="row text-center text-lg-left">
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    <a id="link" href="#" class="d-block mb-4 h-100">
+                                        <img id="foto" class="img-fluid img-thumbnail" src="../img/pizzanamo.png" alt="">
+
+                                        <p class="morango"><b>Pizza de Namorado</b></p>
+                                        <p class="chocolate"><b> Uma delicia de pizza muito saborosa.<br>Gostou desse sabor ligue para o numero (11)4232-1967</b></p>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    <a id="link" href="#" class="d-block mb-4 h-100">
+                                        <img id="foto" class="img-fluid img-thumbnail" src="../img/pizzaport.jpg" alt="">
+
+                                        <p class="morango"><b>Pizza de Portuguesa</b></p>
+                                        <p class="chocolate"><b> Uma delicia de pizza muito saborosa.<br>Gostou desse sabor ligue para o numero (11)4232-1967</b></p>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    <a id="link" href="#" class="d-block mb-4 h-100">
+                                        <img id="foto" class="img-fluid img-thumbnail" src="../img/pizzacala.jpg" alt="">
+
+                                        <p class="morango"><b>Pizza de Calabresa</b></p>
+                                        <p class="chocolate"><b> Uma delicia de pizza muito saborosa.<br>Gostou desse sabor ligue para o numero (11)4232-1967</b></p>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    <a id="link" href="#" class="d-block mb-4 h-100">
+                                        <img id="foto" class="img-fluid img-thumbnail" src="../img/pizzaatum.jpg" alt="">
+
+                                        <p class="morango"><b>Pizza de Atum</b></p>
+                                        <p class="chocolate"><b> Uma delicia de pizza muito saborosa.<br>Gostou desse sabor ligue para o numero (11)4232-1967</b></p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>

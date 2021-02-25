@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--ABRINDO COMANDOS HTML -->
+<html lang="pt-BR">
+<!-- CONFIGURANDO A LINGUAGEM A SER MOSTRADA -->
+
+<head>
+    <!--ABRINDO CABEÇALHO-->
+    <title>Universitário's Pizza</title>
+    <!--TITULO QUE APARECE NA ABA -->
+    <meta charset="utf-8">
+    <!--CONFIGURANDO ACENTUAÇÃO-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--CONFIGURANDO A ESCALA DA PÁGINA-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--LINK PARA ACESSAR ESTILIZAÇÃO BOOTSTRAP-->
+    <link rel="stylesheet" href="../css/stylecadastro.css">
+    <!--LINK PARA O ARQUIVO CSS-->
+    <link rel="icon" href="../img/unviversitariologo.png" type="image/x-icon" ?v=2 />
+    <!--COMANDO DE LOGOTIPO NA ABA DA PÁGINA-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--CONFIGURAÇÃO DE ESTILO DA PÁGINA
+-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--LINK PARA ACESSAR ESTILIZAÇÃO BOOTSTRAP-->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!--CONFIGURAÇÃO DE ESTILO DA PÁGINA-->
+
+</head>
+<!--FIM DO CABEÇAHO-->
+
+<body>
+    <div class="carregando" id="carregando"></div>
+    <div class="corpo" id="corpo">
+
+        <input type="checkbox" id="chec">
+        <!--CONFIGURANDO O MENU-->
+
+        <label for="chec"><img id="imagem" src="../img/menuimg3.png"></label>
+        <nav>
+            <ul>
+                <li>
+                    <a id="x" href="index.php">
+                        <p id="letra"><img id="imagem3" src="../img/logouni.png"></p>
+                    </a>
+                </li>
+                <li>
+                    <a id="x" href="../html/sabores2.php">
+                        <p id="letra"><b>PIZZAS SALGADAS</b></p>
+                    </a>
+                </li>
+                <li>
+                    <a id="x" href="../html/sabores.php">
+                        <p id="letra"><b>PIZZAS DOCES</b></p>
+                    </a>
+                </li>
+                <li>
+                    <a id="x" href="../html/quemsomos.php">
+                        <p id="letra"><b>QUEM SOMOS?</b></p>
+                    </a>
+                </li>
+                <li>
+                    <a id="x" href="../html/logadm.php">
+                        <p id="letra"><b>ADMINISTRAÇÃO</b></p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!--FIM DO MENU-->
+
+        <div id="branco" class="col-md-3 col-lg-3"></div>
+        <!--CONFIRAÇÃO QUE DETERMINA AS COLUNAS ( NO CASO DEIXEI 3 COLUNAS EM BRACO PARA CENTRALIZAR O TEXTO NO MEIO)-->
+
+        <div id="inicio" class="col-md-6 col-lg-6">
+            <!--CONFIGURANDO AS INFORMAÇÕES DA PAGINA NO CENTRO-->
+            <div id="divisao">
+                <div class="col-md-9 col-lg-9">
+                    <p id="titulo">EXCLUIR PRODUTO</p>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <img class="imagem3" src="../img/logouni.png" width="100px" height="100px">
+                </div>
+            </div>
+
+
+            <div id="conteudotres" class="col-sm-12 col-md-12 col-lg-12">
+
+
+                <center>
+
+                    
+                    <p class="pro"><b>Consultar </b></p>
+
+
+                    <form class="form-inline" action="" method="POST" name="excluir">
+
+                        <p class="pro"> <b>Código do produto</b> </p>
+                        <input id="botoes" type="number" class="form-control" name="codigo">
+                        &nbsp;
+                        <button id="botoes1" type="submit" name="consultar" class="btn btn-dark btn-lg">
+                            Consultar
+                        </button>
+
+
+
+                        <?php
+                         
+                if(isset($_POST['consultar'])){
+                         $conexao=mysqli_connect("localhost","root","","pi")or die ("erro na conexão do servidor");
+                    
+                   $codigo=$_POST['codigo'];
+
+                      $sql=" select * from loja where codigo = '$codigo'";
+                       $resultado = @mysqli_query($conexao, $sql);
+                       $registro = @mysqli_num_rows($resultado);
+
+                       if($registro !== 0){
+
+                       while($usuario = @mysqli_fetch_array($resultado)){
+                        echo"<div class=\"box\">
+                            <div class=\"thumbnail\">
+                                <br>";
+                                 echo"<img src=../img/".$usuario["enderecoimg"].">";
+                                echo"<div class=\"caption\">
+                                <p class=\"morango\"><b>".$usuario["nomeproduto"]."</b></h2>
+                                    <p class=\"chocolate\"><b>".$usuario["descpro"]."</b></p>
+                                    <p class=\"chocolate\"><b> Valor:R$ &nbsp&nbsp".$usuario["precopro"]."</b></p>
+                            </div>
+                        </div>
+
+                        </div>
+                        "; }
+                       }
+                       
+                       else{ echo"Registro não localizado";
+                             mysqli_close($conexao);
+                       }}
+                        
+                        
+                         if(isset($_POST['excluir'])){
+                        $conexao=mysqli_connect("localhost","root","","pi")or die ("erro na conexão do servidor");
+                             
+                             
+                        
+                         $codigo=$_GET['codigo'];
+
+
+                         $sql = "DELETE FROM cadastro WHERE linha='$linha'";
+
+                        // Executa o comando SQL
+                        $result = mysqli_query($conexao,$sql);
+                        // Verifica se o comando foi executado com sucesso
+                        if(!$result){
+
+                        die("<script>
+                        alert('PRODUTO NÃO EXCLUIDO');
+                        </script>" . mysql_error());
+                        }else{
+                        $totalt=0;
+                        $subtotal=0;
+                        $frete=0;
+
+                        echo "<script>
+                            alert('PRODUTO EXCLUIDO');
+                            window.location.href = \"../html/carrinho.php?teste=1&codi=0&qtdadeven=0&totalt=".$totalt.
+                            "&frete=".$frete.
+                            "&subtotal=".$subtotal.
+                            "&idcliente=".$idcliente."\"; 
+                        </script>";
+                        }
+         
+ 
+                        
+                        $_COOKIE['codigo']=$usuario["codigo"]; 
+
+                         $sql = "DELETE FROM loja WHERE codigo='$codigo'";
+  
+                          // Executa o comando SQL
+                          $result = mysqli_query($conexao,$sql);
+                          // Verifica se o comando foi executado com sucesso
+                          if(!$result){
+                            die("<script> alert('PRODUTO NÃO EXCLUIDO'); </script>" . mysql_error());
+                          }else{
+                            echo "<script> alert('PRODUTO EXCLUIDO'); </script>";
+                    }}
+                        ?>
+
+
+                        <br><br>
+                        <button id="botoes" type="submit" class="btn btn-danger btn-lg" name="excluir">
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            Deletar produto
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        </button>
+                    </form>
+
+
+                    <br>
+
+
+                    <a href="../html/cadastro.php"><p class="prod">Incluir produtos</p></a><br><br>
+                    <a href="../html/alterar.php"><p class="prod">Alterar produtos</p></a>
+                </center>
+
+
+
+
+                <!--<div class="footer">
+  <p>Desenvolvedores:André Felipe Poltronieri Vieira<br>Carlos António Longas<br>Giovanna Ferracini Souza</p>
+</div> -->
+
+                <hr />
+                <!-- DIVISORIA DO FOOTER (LINHA)-->
+                <p id="roda"><b>Desenvolvedores: André Felipe Poltronieri Vieira<br>Carlos António Longas<br>Giovanna Ferracini Souza<br>Copyright ©2020 All rights reserved | Universitário's Pizza</b></p>
+                <!--ABRINDO PARAGRAFO COM A TAG <p> DEIXANDO EM NEGRITO COM A TAG <b> E CONFIGURANDO O PARAGRAFO COM O ID (roda)-->
+            </div>
+            <div id="branco" class="col-sm-12 col-md-3 col-lg-3"></div>
+            <!-- DIVSÃO EM BRANCO PARA CENTRALIZAR O TEXTO-->
+
+        </div>
+        <script type="text/javascript">
+            // $(window).on('load', function () {
+
+            // document.getElementById("carregando").style.display = "none";
+            // document.getElementById("corpo").style.display = "block";
+
+            //});
+
+
+            var intervalo = setInterval(function() {
+
+                clearInterval(intervalo);
+
+                document.getElementById("carregando").style.display = "none";
+                document.getElementById("corpo").style.display = "block";
+            }, 4000);
+        </script>
+    </div>
+</body>
+<!--FECHANDO O CORPO DA PÁGINA-->
+
+</html>
+<!-- FECHANDO A TAG HTML-->
