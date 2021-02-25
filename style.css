@@ -50,6 +50,7 @@ nav {
     /*height:100%;*/
     position: fixed;
     transition: all .5s;
+    z-index: 2;
 }
 
 input[type="checkbox"]:checked ~ nav {
